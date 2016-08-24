@@ -18,27 +18,26 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-{   'active': False,
+{
     'author': u'ADHOC SA',
     'category': u'base.module_category_knowledge_management',
     'demo_xml': [],
-    'depends': ['survey',],
+    'depends': ['survey', ],
     'description': u"""
 Academic Evaluations
 ====================
 Extends the functionality of the survey module in order to make assessments that are corrected automatically
 """,
-    'installable': True,
+    'installable': False,
     'license': 'AGPL-3',
     'name': u'Academic Evaluations',
     'test': [
-            ],
+    ],
     'data': [
-            'view/survey_view.xml',
-            'security/ir.model.access.csv',
-            'security/survey_security.xml',
-            ],
-    'version': '8.0.1.0.0',
-    'website': 'www.adhoc.com.ar'}
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+        'view/survey_view.xml',
+        'security/ir.model.access.csv',
+        'security/survey_security.xml',
+    ],
+    'version': '9.0.1.0.0',
+    'website': 'www.adhoc.com.ar'
+}

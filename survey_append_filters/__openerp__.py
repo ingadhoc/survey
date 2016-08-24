@@ -20,7 +20,7 @@
 ##############################################################################
 {
     'name': 'Survey Append Filters',
-    'version': '8.0.0.0.1',
+    'version': '9.0.1.0.0',
     'category': 'Warehouse Management',
     'sequence': 14,
     'summary': '',
@@ -43,7 +43,7 @@ Survey Append Filters
     ],
     'test': [
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': False,
 }
