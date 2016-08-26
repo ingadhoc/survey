@@ -10,7 +10,7 @@ class survey_survey(models.Model):
     _inherit = 'survey.survey'
 
     append_filter = fields.Boolean(
-        'Append filters in finished surveys',
+        string='Append filters in finished surveys',
         default=True)
 
     @api.model
