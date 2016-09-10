@@ -271,11 +271,11 @@ class survey_user_input(osv.Model):
             return int(user_input_line.value_number)
         elif user_input_line.question_id.type == 'matrix' and \
                 user_input_line.value_suggested:
-            for giv in \
+            for g in \
                     user_input_line.value_suggested_row.matrix_answer_score_ids:
                 if user_input_line.value_suggested.id == \
-                        giv.answer_id.id:
-                    return giv.score
+                        g.answer_id.id:
+                    return g.score
         return 0
 
     def write(self, cr, uid, ids, vals, context=None):
