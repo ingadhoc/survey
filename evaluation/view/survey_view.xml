@@ -48,11 +48,12 @@
                     <!-- </group>                 -->
                 <!-- </div> -->
 
-                <group string="Constraints" position="before">
+                <!--<group string="Constraints" position="before">-->
+                <xpath expr="//notebook/page[2]/group[1]" position="before">
                     <group string="Scores" name="scores" attrs="{'invisible':[('type','not in',['multiple_choice', 'matrix'])]}">
-
                     </group>
-                </group>
+                </xpath>
+                <!--</group>-->
 
                 <xpath expr="//field[@name='labels_ids']" position="after">
                     <field name="copy_labels_ids" colspan="4" nolabel="1" context="{'default_question_id': active_id}" attrs="{'invisible':[('type','not in',['simple_choice', 'multiple_choice'])],'readonly':[('id','=', False)]}">
@@ -108,7 +109,8 @@
                 <page string="Select Options" position="attributes">
                     <attribute name="attrs">{'invisible':[('evaluation_type','=','only_score')]}</attribute>
                 </page> -->
-                <page string="Edit Pages and Questions" position="before">
+                <xpath expr="//notebook/page[1]" position="before">
+                <!--<page string="Edit Pages and Questions" position="before">-->
                     <page string="Evaluation" attrs="{'invisible':[('is_evaluation','!=',True)]}">
                         <group name="evaluation_config" col="4">
                             <field name="evaluation_type" attrs="{'required':[('is_evaluation','=',True)]}"/>
@@ -146,7 +148,8 @@
                             </page>                        
                         </notebook>
                     </page>
-                </page>
+                </xpath>
+                <!--</page>-->
         	</field>
     	</record>
 
@@ -186,9 +189,11 @@
             <field name="model">survey.user_input</field>
             <field name="inherit_id" ref="survey.survey_user_input_search"/>
             <field name="arch" type="xml">
-                <filter string="Test" position="after">
+                 <xpath expr="//search/filter[4]" position="after">
+                <!--<filter string="Test" position="after">-->
                     <filter string="My Answers" domain="[('partner_id.user_ids','in', [uid])]"/>
-                </filter>
+                <!--</filter>-->
+                </xpath>
             </field>
         </record>        
 
@@ -332,6 +337,7 @@
                     <field name="from"/>
                     <field name="to"/>
                     <field name="score"/>
+                    <field name="survey_question_id"/>
                 </tree>
             </field>
         </record>     
