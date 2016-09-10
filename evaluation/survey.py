@@ -271,12 +271,11 @@ class survey_user_input(osv.Model):
             return int(user_input_line.value_number)
         elif user_input_line.question_id.type == 'matrix' and \
                 user_input_line.value_suggested:
-            for given \
-                    in \
+            for giv in \
                     user_input_line.value_suggested_row.matrix_answer_score_ids:
                 if user_input_line.value_suggested.id == \
-                        given.answer_id.id:
-                    return given.score
+                        giv.answer_id.id:
+                    return giv.score
         return 0
 
     def write(self, cr, uid, ids, vals, context=None):
@@ -543,13 +542,15 @@ class survey_survey(osv.Model):
             content_questions_score = sum(
                 [content.score for content in survey.question_content_ids])
             res[survey.id]['content_questions_score'] = content_questions_score
-            non_content_questions_ids = self.pool.get('survey.question').search(
-                cr, uid, [('survey_id', '=', survey.id),
-                          ('content_id', '=', False)], context=context)
-            non_content_questions = self.pool.get('survey.question').browse(
-                cr, uid, non_content_questions_ids, context=context)
-            non_content_questions_score = sum([question.max_score for question in
-                                               non_content_questions])
+            non_content_questions_ids = \
+                self.pool.get('survey.question').search(
+                    cr, uid, [('survey_id', '=', survey.id),
+                              ('content_id', '=', False)], context=context)
+            non_content_questions = \
+                self.pool.get('survey.question').browse(
+                    cr, uid, non_content_questions_ids, context=context)
+            non_content_questions_score = sum(
+                [question.max_score for question in non_content_questions])
             res[survey.id]['non_content_questions_score'] = \
                 non_content_questions_score
 
