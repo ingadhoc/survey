@@ -3,6 +3,7 @@ from openerp.osv import fields, osv
 from openerp import api
 from openerp import fields as new_fields
 
+
 class survey_question_score_range(osv.Model):
     _name = 'survey.question.score.range'
     # _rec_name = 'value'
@@ -48,42 +49,42 @@ class survey_question(osv.Model):
             scores = [answer.score for answer in question.copy_labels_ids]
             max_score = max(scores if scores else [0])
 
-        elif question.type == 'multiple_choice' and \
-                        question.score_calc_method == 'direct_sum':
+        elif question.type == 'multiple_choice' \
+                and question.score_calc_method == 'direct_sum':
             max_score = \
                 sum([answer.score for answer in
                      question.copy_labels_ids if answer.score > 0])
-        elif question.type == 'multiple_choice' and \
-                        question.score_calc_method == 'ranges':
+        elif question.type == 'multiple_choice' \
+                and question.score_calc_method == 'ranges':
             scores = [score_range.score for score_range in
                       question.score_ranges_ids]
             max_score = max(scores if scores else [0])
 
-        elif question.type == 'numerical_box' and \
-                        question.score_calc_method == 'direct_sum':
+        elif question.type == 'numerical_box' \
+                and question.score_calc_method == 'direct_sum':
             max_score = question.validation_max_float_value
-        elif question.type == 'numerical_box' and \
-                        question.score_calc_method == 'ranges':
+        elif question.type == 'numerical_box' \
+                and question.score_calc_method == 'ranges':
             scores = [score_range.score for score_range in
                       question.score_ranges_ids]
             max_score = max(scores if scores else [0])
 
-        elif question.type == 'matrix' and \
-                        question.matrix_subtype == 'simple' and \
-                        question.score_calc_method == 'direct_sum':
+        elif question.type == 'matrix' \
+                and question.matrix_subtype == 'simple' \
+                and question.score_calc_method == 'direct_sum':
             for matrix_question in question.labels_ids_2:
                 scores = [matrix_score.score for matrix_score in
                           matrix_question.matrix_answer_score_ids]
                 max_score += max(scores if scores else [0])
-        elif question.type == 'matrix' and \
-                        question.matrix_subtype == 'multiple' and \
-                        question.score_calc_method == 'direct_sum':
+        elif question.type == 'matrix' \
+                and question.matrix_subtype == 'multiple' \
+                and question.score_calc_method == 'direct_sum':
             for matrix_question in question.labels_ids_2:
                 max_score += sum([matrix_score.score for matrix_score in
                                   matrix_question.matrix_answer_score_ids
                                   if matrix_score.score > 0])
-        elif question.type == 'matrix' and \
-                        question.score_calc_method == 'ranges':
+        elif question.type == 'matrix' \
+                and question.score_calc_method == 'ranges':
             scores = [score_range.score for score_range in
                       question.score_ranges_ids]
             max_score = max(scores if scores else [0])
@@ -102,20 +103,22 @@ class survey_question(osv.Model):
                                     string='Level', ),
         'content_id': fields.many2one('survey.question.content',
                                       string='Content', ),
-        # 'max_score': fields.function(_get_max_score, type='integer',
-        # string='Max Score', help='Max score an answer of this question can get',),
+        # 'max_score': fields.function(_get_max_score,
+        # type='integer',
+        # string='Max Score', help='Max score an
+        # answer of this question can get',),
         'score_calc_method': fields.selection(
             [('direct_sum', 'Direct Sum'), ('ranges', 'Ranges')],
             string='Score Method',
             help="Choose Direct Sum if you want to sum the values "
                  "assigned to questions answers. Ranges if you want "
                  "to define ranges for correct answers.",),
-        'score_ranges_ids': fields.one2many('survey.question.score.range',
-                                            'survey_question_id',
-                                            string='Ranges',),
-        'copy_labels_ids': fields.related('labels_ids', relation='survey.label',
-                                          type='one2many',
-                                          string='Suggested answers',),
+        'score_ranges_ids': fields.one2many(
+            'survey.question.score.range',
+            'survey_question_id', string='Ranges',),
+        'copy_labels_ids': fields.related(
+            'labels_ids', relation='survey.label',
+            type='one2many', string='Suggested answers',),
     }
 
     _defaults = {
@@ -127,20 +130,22 @@ class survey_label(osv.Model):
 
     _columns = {
         'score': fields.integer('Score'),
-        'matrix_answer_score_ids': fields.one2many('survey.matrix_answer_score',
-                                                   'question_id',
-                                                   'Matrix Answer Score'),
+        'matrix_answer_score_ids': fields.one2many(
+            'survey.matrix_answer_score',
+            'question_id', 'Matrix Answer Score'),
     }
 
     _defaults = {
         'score': 0,
     }
 
+
 class survey_user_input(osv.Model):
 
     _inherit = 'survey.user_input'
     # TODO: ver si usamos la funcion get_score,
-    # el tema es que hay que poner store=true para poder usarlo
+    # el tema es que hay que poner store=true
+    # para poder usarlo
     #  en la vista, habria que ver cuando hay
     # que actualizar los valores
     _columns = {
@@ -211,7 +216,8 @@ class survey_user_input(osv.Model):
                     context=context)
 
                 # Calculte score_percentage
-                score_percentage = question_score * 100.0 / question.max_score
+                score_percentage = \
+                    question_score * 100.0 / question.max_score
 
                 if uiqs_ids:
                     uiqs_obj.write(cr, uid, uiqs_ids[0],
@@ -225,9 +231,10 @@ class survey_user_input(osv.Model):
                         'question_id': question.id,
                         'user_input_id': user_input.id,
                         }, context=context)
-            if user_input.survey_id.max_score and user_input.survey_id.max_score != 0:
-                computed_score = computed_score * 100.0 / \
-                                 user_input.survey_id.max_score
+            if user_input.survey_id.max_score \
+                    and user_input.survey_id.max_score != 0:
+                computed_score = \
+                    computed_score * 100.0 / user_input.survey_id.max_score
             else:
                 computed_score = False
             self.write(cr, uid, user_input.id,
@@ -236,7 +243,8 @@ class survey_user_input(osv.Model):
 
     # TODO: desde la pregunta, buscar el rango de acuerdo al
     # pre_score y retornar el score asociado. Sino retornar 0
-    def get_ranged_score(self, cr, uid, question, pre_score, context=None):
+    def get_ranged_score(
+            self, cr, uid, question, pre_score, context=None):
         question_score_range_obj = self.pool.get(
             'survey.question.score.range')
         question_score_range_ids = \
