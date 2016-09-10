@@ -124,6 +124,8 @@ class survey_question(osv.Model):
     _defaults = {
         'score_calc_method': 'direct_sum',
     }
+
+
 class survey_label(osv.Model):
 
     _inherit = 'survey.label'
@@ -178,7 +180,7 @@ class survey_user_input(osv.Model):
 
     def compute_score(self, cr, uid, ids, context=None):
         if not context:
-            context={}
+            context = {}
         question_obj = self.pool['survey.question']
         user_input_lines_obj = self.pool.get('survey.user_input_line')
         uiqs_obj = self.pool.get('survey.user_input_question_score')
@@ -192,13 +194,13 @@ class survey_user_input(osv.Model):
                     cr, uid, question_ids, context=context):
                 user_input_lines_ids = user_input_lines_obj.search(
                     cr, uid, [('question_id', '=', question.id),
-                             ('user_input_id', '=', user_input.id)],
+                              ('user_input_id', '=', user_input.id)],
                     context=context)
                 user_input_lines = user_input_lines_obj.browse(
                     cr, uid, user_input_lines_ids, context=context)
 
-                if question.type == 'simple_choice' or \
-                                question.score_calc_method == 'direct_sum':
+                if question.type == 'simple_choice' \
+                        or question.score_calc_method == 'direct_sum':
                     question_score = sum(
                         [self.get_answer_score(user_input_line)
                          for user_input_line in user_input_lines])
@@ -210,9 +212,9 @@ class survey_user_input(osv.Model):
 
                 computed_score += question_score
 
-                uiqs_ids = uiqs_obj.search(cr, uid,
-                    [('question_id', '=', question.id),
-                     ('user_input_id', '=', user_input.id)],
+                uiqs_ids = uiqs_obj.search(
+                    cr, uid, [('question_id', '=', question.id),
+                              ('user_input_id', '=', user_input.id)],
                     context=context)
 
                 # Calculte score_percentage
@@ -269,18 +271,19 @@ class survey_user_input(osv.Model):
             return int(user_input_line.value_number)
         elif user_input_line.question_id.type == 'matrix' and \
                 user_input_line.value_suggested:
-            for given_answer_score in \
+            for given \
+                    in \
                     user_input_line.value_suggested_row.matrix_answer_score_ids:
                 if user_input_line.value_suggested.id == \
-                        given_answer_score.answer_id.id:
-                    return given_answer_score.score
+                        given.answer_id.id:
+                    return given.score
         return 0
 
     def write(self, cr, uid, ids, vals, context=None):
         write_res = super(survey_user_input, self).write(
             cr, uid, ids, vals, context=context)
         # If score in context then score is being writed
-        if vals.get('state')=='done' and 'score' not in vals:
+        if vals.get('state') == 'done' and 'score' not in vals:
             if isinstance(ids, (int, long)):
                 ids = [ids]
             self.compute_score(cr, uid, ids, context=context)
@@ -304,6 +307,7 @@ class survey_user_input_question_score(osv.Model):
         'score': fields.integer('Score', required=True,),
         'score_percentage': fields.integer('Score %', required=True,),
     }
+
 
 class survey_matrix_answer_score(osv.Model):
     _name = 'survey.matrix_answer_score'
@@ -335,6 +339,7 @@ class survey_question_level(osv.Model):
                             required=True,
                             translate=True),
     }
+
 
 class survey_level(osv.Model):
 
@@ -393,6 +398,7 @@ class survey_level(osv.Model):
         compute='get_question_ids',
         string='Questions',)
 
+
 class survey_question_content(osv.Model):
 
     _name = 'survey.question.content'
@@ -402,6 +408,7 @@ class survey_question_content(osv.Model):
         'name': fields.char(string="Name", required=True,
                             translate=True),
     }
+
 
 class survey_content(osv.Model):
 
@@ -468,6 +475,7 @@ class survey_question_objective(osv.Model):
                             required=True, translate=True),
     }
 
+
 class survey_objective(osv.Model):
 
     _name = 'survey.objective'
@@ -519,24 +527,25 @@ class survey_objective(osv.Model):
         compute='get_question_ids',
         string='Questions',)
 
+
 class survey_survey(osv.Model):
 
     _inherit = 'survey.survey'
 
     def _get_scores(self, cr, uid, ids, names, arg, context=None):
-        res = dict([(id, {'max_score':0,
-            'obj_questions_score':0,
-            'level_questions_score':0,
-            'non_obj_questions_score':0,
-            'non_level_questions_score':0,
-            }) for id in ids])
+        res = dict([(id,
+                     {'max_score': 0,
+                      'obj_questions_score': 0,
+                      'level_questions_score': 0,
+                      'non_obj_questions_score': 0,
+                      'non_level_questions_score': 0}) for id in ids])
         for survey in self.browse(cr, uid, ids, context=context):
             content_questions_score = sum(
                 [content.score for content in survey.question_content_ids])
             res[survey.id]['content_questions_score'] = content_questions_score
             non_content_questions_ids = self.pool.get('survey.question').search(
                 cr, uid, [('survey_id', '=', survey.id),
-                          ('content_id','=',False)], context=context)
+                          ('content_id', '=', False)], context=context)
             non_content_questions = self.pool.get('survey.question').browse(
                 cr, uid, non_content_questions_ids, context=context)
             non_content_questions_score = sum([question.max_score for question in
@@ -560,7 +569,8 @@ class survey_survey(osv.Model):
                 [level.score for level in survey.question_level_ids])
             res[survey.id]['level_questions_score'] = level_questions_score
             non_level_questions_ids = self.pool.get('survey.question').search(
-                cr, uid, [('survey_id', '=', survey.id),('level_id', '=', False)],
+                cr, uid, [('survey_id', '=', survey.id),
+                          ('level_id', '=', False)],
                 context=context)
             non_level_questions = self.pool.get('survey.question').browse(
                 cr, uid, non_level_questions_ids, context=context)
@@ -600,13 +610,13 @@ class survey_survey(osv.Model):
         #         \n-Manually Evaluated: someone will
         # need to correct the evaluation and complete with the score.
         #         \n-Only Score: Evaluations without
-        # questions and that should be manually evaluated. For example, you
+        # questions and that should be manually evaluated.
+        # For example, you
         #  can make evaluations without questions just to enter results
         # from evaluations make outside this system."),
-        'question_objective_ids': fields.one2many('survey.objective',
-                                                  'survey_id',
-                                                  string='Questions Objectives',
-                                                  copy=True),
+        'question_objective_ids': fields.one2many(
+            'survey.objective', 'survey_id',
+            string='Questions Objectives', copy=True),
         'question_level_ids': fields.one2many('survey.level',
                                               'survey_id',
                                               string='Questions Levels',
