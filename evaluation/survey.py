@@ -262,18 +262,18 @@ class survey_user_input(osv.Model):
                 cr, uid, question_score_range_ids[0],
                 context=context).score
 
-    def get_answer_score(self, user_input_line):
-        if user_input_line.question_id.type in \
+    def get_answer_score(self, user_input_l):
+        if user_input_l.question_id.type in \
                 ['simple_choice', 'multiple_choice'] and \
-                user_input_line.value_suggested:
-            return user_input_line.value_suggested.score
-        elif user_input_line.question_id.type == 'numerical_box':
-            return int(user_input_line.value_number)
-        elif user_input_line.question_id.type == 'matrix' and \
-                user_input_line.value_suggested:
+                user_input_l.value_suggested:
+            return user_input_l.value_suggested.score
+        elif user_input_l.question_id.type == 'numerical_box':
+            return int(user_input_l.value_number)
+        elif user_input_l.question_id.type == 'matrix' and \
+                user_input_l.value_suggested:
             for g in \
-                    user_input_line.value_suggested_row.matrix_answer_score_ids:
-                if user_input_line.value_suggested.id == \
+                    user_input_l.value_suggested_row.matrix_answer_score_ids:
+                if user_input_l.value_suggested.id == \
                         g.answer_id.id:
                     return g.score
         return 0
