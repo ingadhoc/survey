@@ -23,12 +23,7 @@
     'category': u'base.module_category_knowledge_management',
     'demo_xml': [],
     'depends': ['survey', ],
-    'description': u"""
-Academic Evaluations
-====================
-Extends the functionality of the survey module in order to make assessments that are corrected automatically
-""",
-    'installable': False,
+    'installable': True,
     'license': 'AGPL-3',
     'name': u'Academic Evaluations',
     'test': [
