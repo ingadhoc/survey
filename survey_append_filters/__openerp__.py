@@ -24,7 +24,7 @@
     'category': 'Warehouse Management',
     'sequence': 14,
     'summary': '',
-    'author':  'ADHOC SA',
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'images': [
@@ -43,4 +43,3 @@
     'auto_install': False,
     'application': False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
