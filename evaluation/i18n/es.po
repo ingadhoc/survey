@@ -5,12 +5,12 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: odoo-addons (8.0)\n"
+"Project-Id-Version: survey (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-09 23:57+0000\n"
-"PO-Revision-Date: 2015-09-01 18:02+0000\n"
-"Last-Translator: Juan Jose Scarafia <scarafia.juanjose@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-odoo-addons-8-0/language/es/)\n"
+"POT-Creation-Date: 2016-10-11 18:17+0000\n"
+"PO-Revision-Date: 2016-06-27 13:03+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-survey-8-0/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -101,6 +101,18 @@ msgid "Direct Sum"
 msgstr "Suma Directa"
 
 #. module: evaluation
+#: field:survey.content,display_name:0 field:survey.level,display_name:0
+#: field:survey.matrix_answer_score,display_name:0
+#: field:survey.objective,display_name:0
+#: field:survey.question.content,display_name:0
+#: field:survey.question.level,display_name:0
+#: field:survey.question.objective,display_name:0
+#: field:survey.question.score.range,display_name:0
+#: field:survey.user_input_question_score,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: evaluation
 #: view:survey.survey:evaluation.evaluation_survey_form
 msgid "Edit Pages and Questions"
 msgstr "Editar páginas y preguntas"
@@ -134,6 +146,18 @@ msgstr "ID"
 #: field:survey.survey,is_evaluation:0
 msgid "Is Evaluation?"
 msgstr "Es esvaluacion?"
+
+#. module: evaluation
+#: field:survey.content,__last_update:0 field:survey.level,__last_update:0
+#: field:survey.matrix_answer_score,__last_update:0
+#: field:survey.objective,__last_update:0
+#: field:survey.question.content,__last_update:0
+#: field:survey.question.level,__last_update:0
+#: field:survey.question.objective,__last_update:0
+#: field:survey.question.score.range,__last_update:0
+#: field:survey.user_input_question_score,__last_update:0
+msgid "Last Modified on"
+msgstr ""
 
 #. module: evaluation
 #: field:survey.content,write_uid:0 field:survey.level,write_uid:0
@@ -281,6 +305,8 @@ msgid "Question Scores"
 msgstr "Puntuaciones de Pregunta"
 
 #. module: evaluation
+#: field:survey.content,question_ids:0 field:survey.level,question_ids:0
+#: field:survey.objective,question_ids:0
 #: view:survey.question:evaluation.evaluation_question_form
 msgid "Questions"
 msgstr "Preguntas"
