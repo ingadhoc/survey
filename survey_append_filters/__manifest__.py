@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Survey Append Filters',
-    'version': '9.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Warehouse Management',
     'sequence': 14,
     'summary': '',
@@ -32,11 +32,11 @@
         'survey'
     ],
     'data': [
-        'survey_view.xml',
+        'views/survey_survey_views.xml',
     ],
     'demo': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

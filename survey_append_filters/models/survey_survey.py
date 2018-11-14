@@ -5,25 +5,26 @@
 from odoo import fields, models, api
 
 
-class survey_survey(models.Model):
+class SurveySurvey(models.Model):
     _inherit = 'survey.survey'
 
     append_filter = fields.Boolean(
         string='Append filters in finished surveys',
-        default=True)
+        default=True,
+    )
 
-    @api.model
-    def filter_input_ids(self, survey, filters, finished=False):
+    @api.multi
+    def filter_input_ids(self, filters, finished=False):
         '''If user applies any filters, then this function returns list of
            filtered user_input_id and label's strings for display data in web.
            :param filters: list of dictionary (having: row_id, ansewr_id)
            :param finished: True for completely filled survey,Falser otherwise.
            :returns list of filtered user_input_ids.
         '''
-        if survey.append_filter:
+        if self.append_filter:
+            input_lines = self.env['survey.user_input_line']
+            filtered_inputs = input_lines.user_input_id
             if filters:
-                input_lines = self.env['survey.user_input_line']
-                filtered_inputs = input_lines.user_input_id
                 for filter in filters:
                     row_id, answer_id = filter['row_id'], filter['answer_id']
                     if row_id == 0:
@@ -42,11 +43,11 @@ class survey_survey(models.Model):
             if finished:
                 if not filtered_inputs:
                     user_inputs = self.env['survey.user_input'].search([
-                        ('survey_id', '=', survey.id)])
+                        ('survey_id', '=', self.id)])
                 else:
                     user_inputs = filtered_inputs
                 return user_inputs.filtered(lambda x: x.state == 'done').ids
             return filtered_inputs.ids
         else:
-            return super(survey_survey, self).filter_input_ids(
-                survey, filters, finished)
+            return super(SurveySurvey, self).filter_input_ids(
+                filters, finished)
