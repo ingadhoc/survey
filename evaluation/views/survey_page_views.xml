@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- PAGES -->
+    <record model="ir.ui.view" id="survey_page_form">
+        <field name="name">survey_page_form</field>
+        <field name="model">survey.page</field>
+        <field name="inherit_id" ref="survey.survey_page_form"/>
+        <field name="arch" type="xml">
+            <form>
+                <field name="survey_id" invisible="1"/>
+            </form>
+            <field name="question_ids" position="attributes">
+                <attribute name="context">{'default_page_id': active_id,'default_survey_id':survey_id}</attribute>
+            </field>
+            <xpath expr="//field[@name='question_ids']//tree" position="inside">
+                <field name="max_score" string="Max Score"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

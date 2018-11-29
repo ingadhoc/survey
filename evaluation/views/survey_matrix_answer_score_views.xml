@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record model="ir.actions.act_window" id="action_matrix_answer_score">
+        <field name="name">Matrix Answer Score</field>
+        <field name="res_model">survey.matrix_answer_score</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Matrix Answer Score" id="menu_survey_matrix_answer_score" action="action_matrix_answer_score" parent="survey.menu_surveys_configuration" sequence="5"/>
+
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="evaluation_user_input_form">
+        <field name="name">evaluation_user_input_form</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_form"/>
+        <field name="arch" type="xml">
+            <form>
+                <field name="evaluation_type" invisible="1"/>
+                <!-- <field name="manual_score" invisible="1"/> -->
+                <!-- Replaced by without_questions functionality -->
+                <!-- <field name="designed" invisible="1"/> -->
+                <!-- <field name="without_questions" invisible="1"/> -->
+            </form>
+            <button name="action_survey_results" position="after">
+                <button name="compute_score" string="Re-Compute Score" type="object"/>
+                <!-- <button name="compute_score" string="Compute Score" type="object" groups="base.group_no_one"/> -->
+            </button>
+            <field name="token" position="after">
+                <label for="score" groups="base.group_survey_see_scores"/>
+                <div name="score" class="oe_inline">
+                    <field name="score" groups="base.group_survey_see_scores" class="oe_inline" readonly="1"/>
+%
+                </div>
+                <!-- <field name="score" groups="base.group_survey_see_scores" attrs="{'readonly':[('evaluation_type','=','automatically_evaluated')]}"/> -->
+            </field>
+            <field name="user_input_line_ids" position="before">
+                <label for="input_question_score_ids" groups="base.group_survey_see_scores"/>
+                <field name="input_question_score_ids" groups="base.group_survey_see_scores"/>
+                <label for="user_input_line_ids"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="evaluation_user_input_search">
+        <field name="name">evaluation_user_input_search</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_search"/>
+        <field name="arch" type="xml">
+            <filter domain="[('test_entry','=', True)]" position="after">
+                <filter string="My Answers" domain="[('partner_id.user_ids','in', [uid])]"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

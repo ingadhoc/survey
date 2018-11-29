@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- User Input Questions Score -->
+    <record model="ir.ui.view" id="survey_user_input_question_score_tree">
+        <field name="name">survey_user_input_question_score_tree</field>
+        <field name="model">survey.user_input_question_score</field>
+        <field name="arch" type="xml">
+            <tree string="Survey User Input Question Score">
+                <field name="question_id"/>
+                <field name="score_percentage"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="survey_user_input_question_score_form">
+        <field name="name">survey_user_input_question_score_form</field>
+        <field name="model">survey.user_input_question_score</field>
+        <field name="arch" type="xml">
+            <form string="Survey User Input Question Score">
+                <group col="2">
+                    <field name="question_id"/>
+                    <field name="score_percentage"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

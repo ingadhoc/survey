@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="evaluation_question_form">
+        <field name="name">evaluation_question_form</field>
+        <field name="model">survey.question</field>
+        <field name="inherit_id" ref="survey.survey_question_form"/>
+        <field name="arch" type="xml">
+            <form>
+                <field name="survey_id" invisible="1"/>
+                <field name="id" invisible="1"/>
+            </form>
+
+            <field name="type" position="replace">
+                <group>
+                    <field name="objective_id" widget="selection"/>
+                    <field name="level_id" widget="selection"/>
+                    <field name="content_id" widget="selection"/>
+                    <field name="type" widget="radio" />
+                </group>
+                <group>
+                    <label for="score_calc_method"/>
+                    <div>
+                        <label string="Choice Score" attrs="{'invisible':[('type','not in',['simple_choice'])]}"/>
+                        <!-- <label string="Answer Value" attrs="{'invisible':[('type','not in',['numerical_box'])]}"/> -->
+                        <label string="Non Scored Question" attrs="{'invisible':[('type','in',['multiple_choice', 'matrix', 'simple_choice','numerical_box'])]}"/>
+                        <field name="score_calc_method" attrs="{'invisible':[('type','not in',['multiple_choice', 'matrix', 'numerical_box'])],'required':[('type','in',['multiple_choice', 'matrix','numerical_box'])]}"/>
+                    </div>
+                    <field name="score_ranges_ids" attrs="{'invisible':['|',('score_calc_method','!=','ranges'),('type','not in',['multiple_choice', 'matrix', 'numerical_box'])]}"/>
+                </group>
+            </field>
+
+            <!-- <div class="oe_title" position="after"> -->
+            <!-- <group col="4"> -->
+            <!-- </group>                 -->
+            <!-- </div> -->
+
+            <xpath expr="//page[2]//group" position="before">
+                <group string="Scores" name="scores" attrs="{'invisible':[('type','not in',['multiple_choice', 'matrix'])]}"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='labels_ids']" position="after">
+                <field name="copy_labels_ids" colspan="4" nolabel="1" context="{'default_question_id': active_id}" attrs="{'invisible':[('type','not in',['simple_choice', 'multiple_choice'])],'readonly':[('id','=', False)]}">
+                    <tree editable="bottom">
+                        <field name="sequence" widget="handle"/>
+                        <field name="value" string="Answer choices"/>
+                        <field name="score"/>
+                    </tree>
+                </field>
+            </xpath>
+
+            <xpath expr="//field[@name='labels_ids']" position="attributes">
+                <attribute name="attrs">{'invisible':[('type','!=','matrix')],'readonly':[('id','=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='labels_ids_2']" position="replace">
+                <field name="labels_ids_2" colspan="4" nolabel="1" context="{'default_question_id_2': active_id}" attrs="{'invisible':[('type','not in',['matrix'])],'readonly':[('id','=', False)]}">
+                    <tree>
+                        <field name="sequence" widget="handle"/>
+                        <field name="value" string="Question"/>
+                    </tree>
+                    <form>
+                        <field name="value" string="Questions" colspan="4"/>
+                        <separator string="Answers Score" colspan="4"/>
+                        <!-- <field name="matrix_answer_score_ids" nolabel="1" context="{'default_question_id_2': default_question_id_2}" colspan="4"> -->
+                        <field name="matrix_answer_score_ids" nolabel="1" colspan="4">
+                            <tree editable="bottom">
+                                <field name="answer_id" widget="selection"/>
+                                <!-- <field name="answer_id" widget="selection" domain="[('question_id','=',context.get('default_question_id_2'))]"/> -->
+                                <field name="score"/>
+                            </tree>
+                        </field>
+                    </form>
+                </field>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

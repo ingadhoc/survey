@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Questions Ranges -->
+    <record model="ir.ui.view" id="survey_question_score_range_tree">
+        <field name="name">survey_question_score_range_tree</field>
+        <field name="model">survey.question.score.range</field>
+        <field name="arch" type="xml">
+            <tree string="Survey Question Score Ranges" editable='top'>
+                <field name="survey_from"/>
+                <field name="to"/>
+                <field name="score"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Configuration -->
+    <record model="ir.actions.act_window" id="action_score_ranges">
+        <field name="name">Score Ranges</field>
+        <field name="res_model">survey.question.score.range</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="search_view_id" ref="survey_label_search"/> -->
+        <!-- <field name="context">{'search_default_group_by_question': True}</field> -->
+    </record>
+
+
+    <menuitem name="Score Ranges" id="menu_survey_score_ranges" action="action_score_ranges" parent="survey.menu_surveys_configuration" sequence="4"/>
+
+</odoo>

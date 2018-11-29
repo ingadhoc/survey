@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- Questions Content -->
+    <record model="ir.ui.view" id="survey_question_content_tree">
+        <field name="name">survey_question_content_tree</field>
+        <field name="model">survey.content</field>
+        <field name="arch" type="xml">
+            <tree string="Survey Question content">
+                <field name="content_id"/>
+                <field name="score"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="survey_question_content_form">
+        <field name="name">survey_question_content_form</field>
+        <field name="model">survey.content</field>
+        <field name="arch" type="xml">
+            <form string="Survey Question content">
+                <group col="1">
+                    <group col="2">
+                        <field name="content_id"/>
+                    </group>
+                    <field name="question_ids">
+                        <tree create="false">
+                            <field name="question"/>
+                            <field name="max_score"/>
+                        </tree>
+                    </field>
+                    <group class="oe_subtotal_footer oe_right" name="scores">
+                        <field name="score"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_question_content">
+        <field name="name">Question Content</field>
+        <field name="res_model">survey.question.content</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_survey_question_content" action="action_question_content" parent="survey.menu_surveys_configuration" sequence="10"/>
+
+</odoo>
