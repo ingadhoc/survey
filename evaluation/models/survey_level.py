@@ -48,6 +48,6 @@ class SurveyLevel(models.Model):
     @api.depends('survey_id.page_ids.question_ids.level_id')
     def _compute_question_ids(self):
         for rec in self:
-            rec.question_ids = rec.env['survey.question'].search(
-                [('page_id.survey_id', '=', rec.survey_id.id),
+            rec.question_ids = rec.env['survey.question'].search([
+                ('page_id.survey_id', '=', rec.survey_id.id),
                 ('level_id', '=', rec.level_id.id)])

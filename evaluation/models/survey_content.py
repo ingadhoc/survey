@@ -55,6 +55,6 @@ class SurveyContent(models.Model):
     @api.depends('survey_id.page_ids.question_ids.content_id')
     def _compute_question_ids(self):
         for rec in self:
-            rec.question_ids = rec.env['survey.question'].search(
-                [('page_id.survey_id', '=', rec.survey_id.id),
+            rec.question_ids = rec.env['survey.question'].search([
+                ('page_id.survey_id', '=', rec.survey_id.id),
                 ('content_id', '=', rec.content_id.id)])
