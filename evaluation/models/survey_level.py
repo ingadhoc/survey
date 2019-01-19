@@ -33,9 +33,9 @@ class SurveyLevel(models.Model):
 
     @api.multi
     def _compute_score(self):
-        for level in self:
-            level.score = sum([question.max_score
-                               for question in level.question_ids])
+        for rec in self:
+            rec.score = sum(
+                [question.max_score for question in rec.question_ids])
 
     def name_get(self):
         # always return the full hierarchical name
@@ -47,6 +47,7 @@ class SurveyLevel(models.Model):
 
     @api.depends('survey_id.page_ids.question_ids.level_id')
     def _compute_question_ids(self):
-        self.question_ids = self.env['survey.question'].search(
-            [('page_id.survey_id', '=', self.survey_id.id),
-             ('level_id', '=', self.level_id.id)])
+        for rec in self:
+            rec.question_ids = rec.env['survey.question'].search(
+                [('page_id.survey_id', '=', rec.survey_id.id),
+                ('level_id', '=', rec.level_id.id)])

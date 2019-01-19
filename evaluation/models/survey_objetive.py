@@ -35,8 +35,8 @@ class SurveyObjective(models.Model):
 
     def _compute_score(self):
         for rec in self:
-            rec.score = sum([question.max_score
-                             for question in rec.question_ids])
+            rec.score = sum(
+                [question.max_score for question in rec.question_ids])
 
     @api.depends('survey_id.page_ids.question_ids.objective_id')
     def _compute_question_ids(self):
