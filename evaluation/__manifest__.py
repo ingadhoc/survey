@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Academic Evaluations',
-    'version': '11.0.1.0.0',
+    'version': '11.0.1.1.0',
     'author': 'ADHOC SA',
     'category': 'base.module_category_knowledge_management',
     'license': 'AGPL-3',

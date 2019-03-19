@@ -7,7 +7,6 @@
         <field name="inherit_id" ref="survey.survey_question_form"/>
         <field name="arch" type="xml">
             <form>
-                <field name="survey_id" invisible="1"/>
                 <field name="id" invisible="1"/>
             </form>
 
@@ -29,11 +28,6 @@
                     <field name="score_ranges_ids" attrs="{'invisible':['|',('score_calc_method','!=','ranges'),('type','not in',['multiple_choice', 'matrix', 'numerical_box'])]}"/>
                 </group>
             </field>
-
-            <!-- <div class="oe_title" position="after"> -->
-            <!-- <group col="4"> -->
-            <!-- </group>                 -->
-            <!-- </div> -->
 
             <xpath expr="//page[2]//group" position="before">
                 <group string="Scores" name="scores" attrs="{'invisible':[('type','not in',['multiple_choice', 'matrix'])]}"/>
