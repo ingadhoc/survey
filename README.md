@@ -1,6 +1,6 @@
-[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/23/11.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-survey-23)
-[![Build Status](https://travis-ci.org/ingadhoc/survey.svg?branch=11.0)](https://travis-ci.org/ingadhoc/survey)
-[![Coverage Status](https://coveralls.io/repos/ingadhoc/survey/badge.png?branch=11.0)](https://coveralls.io/r/ingadhoc/survey?branch=11.0)
+[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/23/12.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-survey-23)
+[![Build Status](https://travis-ci.org/ingadhoc/survey.svg?branch=12.0)](https://travis-ci.org/ingadhoc/survey)
+[![Coverage Status](https://coveralls.io/repos/ingadhoc/survey/badge.png?branch=12.0)](https://coveralls.io/r/ingadhoc/survey?branch=12.0)
 [![Code Climate](https://codeclimate.com/github/ingadhoc/survey/badges/gpa.svg)](https://codeclimate.com/github/ingadhoc/survey)
 
 # ADHOC Survey
