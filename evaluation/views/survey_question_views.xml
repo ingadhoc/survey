@@ -8,22 +8,23 @@
         <field name="arch" type="xml">
             <form>
                 <field name="id" invisible="1"/>
+                <field name="is_evaluation" invisible="1"/>
             </form>
 
             <field name="type" position="replace">
-                <group>
+                <group attrs="{'invisible':[('is_evaluation', '=', False)]}">
                     <field name="objective_id" widget="selection"/>
                     <field name="level_id" widget="selection"/>
                     <field name="content_id" widget="selection"/>
-                    <field name="type" widget="radio" />
                 </group>
-                <group>
+                <field name="type" widget="radio" />
+                <group attrs="{'invisible':[('is_evaluation', '=', False)]}">
                     <label for="score_calc_method"/>
                     <div>
                         <label string="Choice Score" attrs="{'invisible':[('type','not in',['simple_choice'])]}"/>
                         <!-- <label string="Answer Value" attrs="{'invisible':[('type','not in',['numerical_box'])]}"/> -->
                         <label string="Non Scored Question" attrs="{'invisible':[('type','in',['multiple_choice', 'matrix', 'simple_choice','numerical_box'])]}"/>
-                        <field name="score_calc_method" attrs="{'invisible':[('type','not in',['multiple_choice', 'matrix', 'numerical_box'])],'required':[('type','in',['multiple_choice', 'matrix','numerical_box'])]}"/>
+                        <field name="score_calc_method" attrs="{'invisible':[('type','not in',['multiple_choice', 'matrix', 'numerical_box'])],'required':['&amp;',('is_evaluation', '=', True),('type','in',['multiple_choice', 'matrix','numerical_box'])]}"/>
                     </div>
                     <field name="score_ranges_ids" attrs="{'invisible':['|',('score_calc_method','!=','ranges'),('type','not in',['multiple_choice', 'matrix', 'numerical_box'])]}"/>
                 </group>

@@ -48,6 +48,10 @@ class SurveyQuestion(models.Model):
         related='labels_ids',
         string='Suggested answers',
     )
+    is_evaluation = fields.Boolean(
+        related='survey_id.is_evaluation',
+        readonly=True,
+    )
 
     @api.depends(
         'score_ranges_ids',
