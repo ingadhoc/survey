@@ -4,7 +4,7 @@
 ##############################################################################
 
 import logging
-from odoo.addons.survey.controllers.main import WebsiteSurvey
+from odoo.addons.survey.controllers.main import Survey
 from odoo import http
 from odoo.http import request
 
@@ -12,7 +12,7 @@ from odoo.http import request
 _logger = logging.getLogger(__name__)
 
 
-class SurveyConditional(WebsiteSurvey):
+class SurveyConditional(Survey):
 
     # TODO deberiamos heredar esto correctamente
     @http.route()
@@ -29,7 +29,7 @@ class SurveyConditional(WebsiteSurvey):
         # Load the user_input
         user_input = UserInput.sudo().search([('token', '=', token)], limit=1)
         if not user_input:  # Invalid token
-            return request.render("website.403")
+            return request.render("survey.403", {'survey': survey})
 
         # Do not display expired survey (even if some pages have already been
         # displayed -- There's a time for everything!)
@@ -72,4 +72,4 @@ class SurveyConditional(WebsiteSurvey):
                 survey, user_input)
             return request.render('survey.survey', data)
         else:
-            return request.render("website.403")
+            return request.render("survey.403", {'survey': survey})
