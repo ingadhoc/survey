@@ -18,28 +18,28 @@
                 <!-- <button name="compute_score" string="Compute Score" type="object" groups="base.group_no_one"/> -->
             </button>
             <field name="token" position="after">
-                <label for="score" groups="base.group_survey_see_scores"/>
+                <label for="score" groups="evaluation.group_survey_see_scores"/>
                 <div name="score" class="oe_inline">
-                    <field name="score" groups="base.group_survey_see_scores" class="oe_inline" readonly="1"/>
+                    <field name="score" groups="evaluation.group_survey_see_scores" class="oe_inline" readonly="1"/>
 %
                 </div>
-                <!-- <field name="score" groups="base.group_survey_see_scores" attrs="{'readonly':[('evaluation_type','=','automatically_evaluated')]}"/> -->
+                <!-- <field name="score" groups="evaluation.group_survey_see_scores" attrs="{'readonly':[('evaluation_type','=','automatically_evaluated')]}"/> -->
             </field>
             <field name="user_input_line_ids" position="before">
-                <label for="input_question_score_ids" groups="base.group_survey_see_scores"/>
-                <field name="input_question_score_ids" groups="base.group_survey_see_scores"/>
+                <label for="input_question_score_ids" groups="evaluation.group_survey_see_scores"/>
+                <field name="input_question_score_ids" groups="evaluation.group_survey_see_scores"/>
                 <label for="user_input_line_ids"/>
             </field>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="evaluation_user_input_search">
+    <record model="ir.ui.view" id="survey_user_input_search">
         <field name="name">evaluation_user_input_search</field>
         <field name="model">survey.user_input</field>
         <field name="inherit_id" ref="survey.survey_user_input_search"/>
         <field name="arch" type="xml">
             <filter domain="[('test_entry','=', True)]" position="after">
-                <filter string="My Answers" domain="[('partner_id.user_ids','in', [uid])]"/>
+                <filter name="my_answers" string="My Answers" domain="[('partner_id.user_ids','in', [uid])]"/>
             </filter>
         </field>
     </record>

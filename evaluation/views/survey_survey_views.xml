@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- Create non existing search view for survey  -->
-    <record model="ir.ui.view" id="survey.survey_search">
+    <record model="ir.ui.view" id="survey_search">
         <field name="name">Search view for survey</field>
         <field name="model">survey.survey</field>
         <field name="arch" type="xml">

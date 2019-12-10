@@ -6,7 +6,7 @@
         </record> -->
 
     <!-- Survey managers -->
-    <record model="res.groups" id="base.group_survey_see_scores">
+    <record model="res.groups" id="group_survey_see_scores">
         <field name="name">Survey / See Scores</field>
         <field name="implied_ids" eval="[(4, ref('survey.group_survey_user'))]"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
