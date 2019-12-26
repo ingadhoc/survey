@@ -3,15 +3,15 @@
 # * evaluation
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-29 00:30+0000\n"
-"PO-Revision-Date: 2018-11-29 00:30+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018\n"
+"POT-Creation-Date: 2019-12-10 19:24+0000\n"
+"PO-Revision-Date: 2019-12-10 19:24+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019\n"
 "Language-Team: Danish (https://www.transifex.com/adhoc/teams/46451/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_evaluation_type
-#: model:ir.model.fields,help:evaluation.field_survey_user_input_evaluation_type
+#: model:ir.model.fields,help:evaluation.field_survey_survey__evaluation_type
+#: model:ir.model.fields,help:evaluation.field_survey_user_input__evaluation_type
 msgid ""
 "-Automattically Evaluated: you have to set espected question results and the evaluation will be evaluated automatically.\n"
 "\n"
@@ -29,17 +29,17 @@ msgid ""
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_answer_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__answer_id
 msgid "Answer"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_question_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_question_form
 msgid "Answer choices"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_question_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_question_form
 msgid "Answers Score"
 msgstr ""
 
@@ -49,51 +49,51 @@ msgid "Automatically Evaluated"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_question_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_question_form
 msgid "Choice Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_question_score_calc_method
+#: model:ir.model.fields,help:evaluation.field_survey_question__score_calc_method
 msgid ""
 "Choose-Direct Sum if you want to sum the values  assigned to questions "
 "answers.-Ranges if you want to define ranges for correct answers."
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_content_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__content_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__content_id
 msgid "Content"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_content_questions_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__content_questions_score
 msgid "Contents Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_create_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__create_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_create_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__create_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__create_date
 msgid "Created on"
 msgstr ""
 
@@ -103,99 +103,100 @@ msgid "Direct Sum"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_display_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__display_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_survey_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_survey_form
 msgid "Evaluation"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_evaluation_type
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_evaluation_type
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__evaluation_type
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input__evaluation_type
 msgid "Evaluation Type"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_survey_from
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__survey_from
 msgid "From (included)"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_id_2465
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_id_2473
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_id_2481
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__id
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__id
 msgid "ID"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_is_evaluation
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__is_evaluation
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__is_evaluation
 msgid "Is Evaluation?"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_level___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range___last_update
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score___last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_content____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_level____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range____last_update
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_write_uid
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__write_uid
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_write_date
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__write_date
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_level_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__level_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__level_id
 msgid "Level"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_level_questions_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__level_questions_score
 msgid "Levels Score"
 msgstr ""
 
@@ -207,68 +208,68 @@ msgstr ""
 #. module: evaluation
 #: model:ir.actions.act_window,name:evaluation.action_matrix_answer_score
 #: model:ir.model,name:evaluation.model_survey_matrix_answer_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_label_matrix_answer_score_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_label__matrix_answer_score_ids
 #: model:ir.ui.menu,name:evaluation.menu_survey_matrix_answer_score
 msgid "Matrix Answer Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_max_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_max_score
-#: model:ir.ui.view,arch_db:evaluation.survey_page_form
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__max_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__max_score
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_page_form
 msgid "Max Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_question_max_score
+#: model:ir.model.fields,help:evaluation.field_survey_question__max_score
 msgid "Max score an answer of this question can get"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_max_score
+#: model:ir.model.fields,help:evaluation.field_survey_survey__max_score
 msgid "Maximum score that can be obtained in this evaluation"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_user_input_search
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_user_input_search
 msgid "My Answers"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_content_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_level_name
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_name
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_content__name
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_level__name
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective__name
 msgid "Name"
 msgstr "Navn"
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_question_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_question_form
 msgid "Non Scored Question"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_objective_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_objective_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__objective_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__objective_id
 msgid "Objective"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_obj_questions_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__obj_questions_score
 msgid "Objetives Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_non_content_questions_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_non_level_questions_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_non_obj_questions_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__non_content_questions_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__non_level_questions_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__non_obj_questions_score
 msgid "Other Questions Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_question_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_survey_question_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_question_id
-#: model:ir.ui.view,arch_db:evaluation.evaluation_question_form
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__question_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__survey_question_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__question_id
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_question_form
 msgid "Question"
 msgstr ""
 
@@ -280,7 +281,7 @@ msgid "Question Content"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_survey_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_survey_form
 msgid "Question Contents"
 msgstr ""
 
@@ -292,7 +293,7 @@ msgid "Question Level"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_survey_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_survey_form
 msgid "Question Levels"
 msgstr ""
 
@@ -304,68 +305,68 @@ msgid "Question Objective"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_survey_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_survey_form
 msgid "Question Objectives"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_input_question_score_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input__input_question_score_ids
 msgid "Question Scores"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_question_ids
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_question_ids
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_question_ids
-#: model:ir.ui.view,arch_db:evaluation.evaluation_question_form
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__question_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__question_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__question_ids
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_question_form
 msgid "Questions"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_question_content_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__question_content_ids
 msgid "Questions Contents"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_question_level_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__question_level_ids
 msgid "Questions Levels"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_question_objective_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__question_objective_ids
 msgid "Questions Objectives"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_ranges_ids
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__score_ranges_ids
 #: selection:survey.question,score_calc_method:0
 msgid "Ranges"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_user_input_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_user_input_form
 msgid "Re-Compute Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_label_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_score
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_score
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__score
+#: model:ir.model.fields,field_description:evaluation.field_survey_label__score
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__score
+#: model:ir.model.fields,field_description:evaluation.field_survey_matrix_answer_score__score
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__score
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__score
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input__score
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__score
 msgid "Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_score_percentage
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__score_percentage
 msgid "Score %"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_calc_method
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__score_calc_method
 msgid "Score Method"
 msgstr ""
 
@@ -376,32 +377,32 @@ msgid "Score Ranges"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_content_questions_score
+#: model:ir.model.fields,help:evaluation.field_survey_survey__content_questions_score
 msgid "Score for questions with content defined"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_level_questions_score
+#: model:ir.model.fields,help:evaluation.field_survey_survey__level_questions_score
 msgid "Score for questions with level defined"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_obj_questions_score
+#: model:ir.model.fields,help:evaluation.field_survey_survey__obj_questions_score
 msgid "Score for questions with objetive defined"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_non_content_questions_score
+#: model:ir.model.fields,help:evaluation.field_survey_survey__non_content_questions_score
 msgid "Score for questions without content defined"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_non_level_questions_score
+#: model:ir.model.fields,help:evaluation.field_survey_survey__non_level_questions_score
 msgid "Score for questions without level defined"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,help:evaluation.field_survey_survey_non_obj_questions_score
+#: model:ir.model.fields,help:evaluation.field_survey_survey__non_obj_questions_score
 msgid "Score for questions without objetive defined"
 msgstr ""
 
@@ -411,21 +412,31 @@ msgid "Score of a User Input by Question"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.evaluation_question_form
+#: model_terms:ir.ui.view,arch_db:evaluation.evaluation_question_form
 msgid "Scores"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_copy_labels_ids
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_search
+msgid "Search Survey"
+msgstr ""
+
+#. module: evaluation
+#: model:ir.model.fields,field_description:evaluation.field_survey_question__copy_labels_ids
 msgid "Suggested answers"
 msgstr ""
 
 #. module: evaluation
 #: model:ir.model,name:evaluation.model_survey_survey
-#: model:ir.model.fields,field_description:evaluation.field_survey_content_survey_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_level_survey_id
-#: model:ir.model.fields,field_description:evaluation.field_survey_objective_survey_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_content__survey_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_level__survey_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_objective__survey_id
 msgid "Survey"
+msgstr ""
+
+#. module: evaluation
+#: model:res.groups,name:evaluation.group_survey_see_scores
+msgid "Survey / See Scores"
 msgstr ""
 
 #. module: evaluation
@@ -454,8 +465,8 @@ msgid "Survey Question"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.survey_question_objective_form
-#: model:ir.ui.view,arch_db:evaluation.survey_question_objective_tree
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_question_objective_form
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_question_objective_tree
 msgid "Survey Question Objective"
 msgstr ""
 
@@ -465,19 +476,19 @@ msgid "Survey Question Score Range"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.survey_question_score_range_tree
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_question_score_range_tree
 msgid "Survey Question Score Ranges"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.survey_question_content_form
-#: model:ir.ui.view,arch_db:evaluation.survey_question_content_tree
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_question_content_form
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_question_content_tree
 msgid "Survey Question content"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.survey_question_level_form
-#: model:ir.ui.view,arch_db:evaluation.survey_question_level_tree
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_question_level_form
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_question_level_tree
 msgid "Survey Question level"
 msgstr ""
 
@@ -487,22 +498,22 @@ msgid "Survey User Input"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.ui.view,arch_db:evaluation.survey_user_input_question_score_form
-#: model:ir.ui.view,arch_db:evaluation.survey_user_input_question_score_tree
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_user_input_question_score_form
+#: model_terms:ir.ui.view,arch_db:evaluation.survey_user_input_question_score_tree
 msgid "Survey User Input Question Score"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_survey_time_allocated
+#: model:ir.model.fields,field_description:evaluation.field_survey_survey__time_allocated
 msgid "Time Allocated"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range_to
+#: model:ir.model.fields,field_description:evaluation.field_survey_question_score_range__to
 msgid "To (included)"
 msgstr ""
 
 #. module: evaluation
-#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score_user_input_id
+#: model:ir.model.fields,field_description:evaluation.field_survey_user_input_question_score__user_input_id
 msgid "User Input"
 msgstr ""
