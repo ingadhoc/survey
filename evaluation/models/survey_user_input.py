@@ -30,7 +30,8 @@ class SurveyUserInput(models.Model):
         question_obj = self.env['survey.question']
         user_input_lines_obj = self.env['survey.user_input_line']
         uiqs_obj = self.env['survey.user_input_question_score']
-        for user_input in self:
+        for user_input in self.filtered(
+           lambda x: x.survey_id.is_evaluation and x.evaluation_type == 'automatically_evaluated'):
             computed_score = 0
             questions = question_obj.search(
                 [('survey_id', '=', user_input.survey_id.id),
@@ -115,5 +116,5 @@ class SurveyUserInput(models.Model):
         write_res = super(SurveyUserInput, self).write(vals)
         # If score in context then score is being writed
         if vals.get('state') == 'done' and 'score' not in vals:
-            self.compute_score()
+            self.sudo().compute_score()
         return write_res
